@@ -58,7 +58,6 @@ if (isset($_POST['submitRevenu'])) {
 }
 
 
-     
 
 
 
@@ -66,7 +65,8 @@ if (isset($_POST['submitRevenu'])) {
 
 
 
-                            
+
+
 
 
 ?>
@@ -128,13 +128,13 @@ if (isset($_POST['submitRevenu'])) {
 
                                 while ($revenus = $req1->fetch()) {
                                 ?>
-                                   
 
-                                            <div><button type="button" class="btn btn-primary"><?php echo ($depenses['montant']); ?></button>
-                                                <button type="button" class="btn btn-dark"><?php   ?></button> <button type="button" class="btn btn-warning"><?php echo ($revenus['montant']); ?></button>
-                                            </div>
-                                        
-                                   
+
+                                    <div><button type="button" class="btn btn-primary"><?php echo ($depenses['montant']); ?></button>
+                                        <button type="button" class="btn btn-dark"><?php   ?></button> <button type="button" class="btn btn-warning"><?php echo ($revenus['montant']); ?></button>
+                                    </div>
+
+
                                 <?php
                                 }
                                 ?>
@@ -240,7 +240,7 @@ if (isset($_POST['submitRevenu'])) {
 
 
                                                 <td>
-                                                    <button href name="supprimer" type="button" class="btn btn-danger">Supprimer</button>
+                                                    <a href="supDepenses.php?id=<?php echo ($depenses['id']); ?>"><button href name="supprimer" type="button" class="btn btn-danger"> Supprimer</button></a>
                                                     <button name="modifier" type="button" class="btn btn-info">Modifier</button>
                                                 </td>
 
@@ -297,8 +297,8 @@ if (isset($_POST['submitRevenu'])) {
                                                 <td><?php echo ($revenus['montant']); ?></td>
 
                                                 <td>
-                                                    <button name="supprimer" type="button" class="btn btn-danger">Supprimer</button>
-                                                    <button name="modifier" type="button" class="btn btn-info">Modifier</button>
+                                                    <a href="supRevenus.php?id=<?php echo ($revenus['id_revenus']); ?>"><button name="supprimer" type="button" class="btn btn-danger">Supprimer</button></a>
+                                                        <button name="modifier" type="button" class="btn btn-info">Modifier</button>
                                                 </td>
 
                                             </tr>
