@@ -137,7 +137,11 @@ if (isset($_POST['submitRevenu'])) {
 
                                 <?php
                                 }
+                                
+
+
                                 ?>
+                                
                             <?php
                             }
                             ?>
@@ -241,7 +245,7 @@ if (isset($_POST['submitRevenu'])) {
 
                                                 <td>
                                                     <a href="supDepenses.php?id=<?php echo ($depenses['id']); ?>"><button href name="supprimer" type="button" class="btn btn-danger"> Supprimer</button></a>
-                                                    <button name="modifier" type="button" class="btn btn-info">Modifier</button>
+                                                    <a href="modif.php?edit=<?php echo ($depenses['id']); ?>"><button name="modifier" type="button" class="btn btn-info">Modifier</button></a>
                                                 </td>
 
 
@@ -298,7 +302,7 @@ if (isset($_POST['submitRevenu'])) {
 
                                                 <td>
                                                     <a href="supRevenus.php?id=<?php echo ($revenus['id_revenus']); ?>"><button name="supprimer" type="button" class="btn btn-danger">Supprimer</button></a>
-                                                        <button name="modifier" type="button" class="btn btn-info">Modifier</button>
+                                                    <a href="modifRevenu.php?edite=<?php echo ($revenus['id_revenus']); ?>"><button name="modifier" type="button" class="btn btn-info">Modifier</button></a>
                                                 </td>
 
                                             </tr>
