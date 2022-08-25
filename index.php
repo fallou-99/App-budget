@@ -129,9 +129,29 @@ if (isset($_POST['submitRevenu'])) {
                                 while ($revenus = $req1->fetch()) {
                                 ?>
 
+                                <?php
+                                    
+
+                                    $ecart="";
+                                    if($revenus['montant'] >= $depenses['montant']){
+                                       
+                                        $ecart  =  ($revenus['montant']) - ($depenses['montant'] );
+                                        
+                                    }else{
+                                        echo '<script language="javascript">';
+                                        echo 'alert("Vos depenses sont superieures à vos revenus")';
+                                        echo '</script>';
+                                        $ecart  =  ($depenses['montant']) - ($revenus['montant']);
+
+                                    }
+
+
+                                
+                                ?>
+
 
                                     <div><button type="button" class="btn btn-primary"><?php echo ($depenses['montant']); ?></button>
-                                        <button type="button" class="btn btn-dark"><?php   ?></button> <button type="button" class="btn btn-warning"><?php echo ($revenus['montant']); ?></button>
+                                        <button type="button" class="btn btn-dark"><?php echo ($ecart);  ?></button> <button type="button" class="btn btn-warning"><?php echo ($revenus['montant']); ?></button>
                                     </div>
 
 
